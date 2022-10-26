@@ -1,0 +1,21 @@
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.selectCont{
+  background-color: #e0e0e0;
+  padding: 10px;
+  margin: 20px;
+  width: 300px;
+  border-radius: 8px;
+}
+
+.option{
+  margin: 5px;
+  /* font-family: 'Courier New', Courier, monospace; */
+}
+
+.optionGroup{
+  padding: 10px;
+}

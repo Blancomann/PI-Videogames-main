@@ -26,7 +26,7 @@ videogamesRouter.get('/', async(req, res) => {
       const apiData = await axios.get(`https://api.rawg.io/api/games?search=${req.query.name}&key=${API_KEY}`);
       if(apiData.data.count === 0){
         console.log(`Not found: ${req.query.name}`);
-        return res.status(404).json({'Not found': req.query.name});
+        return res.status(204).json(`Not found: "${req.query.name}"`);
       }
       const loadedGames = apiData.data.results.map((g) => {
         return{

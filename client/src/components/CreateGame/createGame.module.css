@@ -1,0 +1,97 @@
+/* 
+    display: flex;
+    justify-content: center;
+    background: #fff url('../../img/crear.jpg') center center/cover no-repeat;
+*/
+
+.container {      /*container-add*/
+  text-align: center;
+  margin: 0px 10px 0px 10px;
+  padding: 10px;
+  /* width: 800px; */
+  height: 650px;
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 4rem;
+  color: #e0e0e0;
+  text-shadow: 2px 1px 3px #a3c11c;
+}
+
+.titleName {
+  color: #e0e0e0;
+  text-shadow: 2px 1px 3px #a3c11c87;
+}
+
+.container label {
+  font-size: large;
+  margin: 3px;
+}
+
+.container input {
+  background-color: #e0e0e0aa;
+}
+
+.container textarea {
+  background-color: #e0e0e0aa;
+}
+
+.formDiv {         /*div-cont*/
+  display: flex;
+  justify-content: center;
+}
+
+.genresDiv {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid #2c5d63;
+  width: 750px;
+  border-radius: 10px;
+  background-color: #e0e0e0aa;
+}
+
+.platfromsDiv {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid #2c5d63;
+  border-radius: 10px;
+  background-color: #e0e0e0aa;
+}
+
+.name {
+  height: 25px;
+  width: 400px;
+  border-radius: 8px;
+}
+
+
+.dt {
+  height: 25px;
+  width: 120px;
+  border-radius: 8px;
+}
+
+.btnDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btnDiv button {
+  padding: 14px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #e0e0e0aa;
+}
+
+.btnDiv button:hover {
+  box-shadow: 1px 2px 4px 2px #e0e0e0;
+  background-color: #a2c11c;
+  color: #444444;
+}
+
+
+

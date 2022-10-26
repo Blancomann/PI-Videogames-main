@@ -1,0 +1,73 @@
+.containerGame{
+  display: table;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  box-shadow: 6px 5px 9px 4px #a3c11cca;
+  transition: all 400ms ease;
+}
+
+.containerGame:hover {
+  box-shadow: 6px 5px 9px 4px #24c11c;
+  transform: translateY(-1.8%);
+
+}
+
+.imgDiv {
+  display: flex;
+  margin: 10px;
+  overflow: hidden;  /*Recorta contenido*/
+  width: 400px;
+  height: 400px;
+}
+
+.imgDiv img {
+  object-fit: cover;
+  width: 100%;
+  min-height: 100;
+  border-radius: 10px;
+}
+
+.titleGame{
+  object-fit: cover;
+  text-align: center;
+  width: 100%;
+  min-height: 100%;
+  border-radius: 10px;
+  color: #2c5d63b6;
+  text-shadow: 1.5px 1.5px 3px #757575;
+  font-size: x-large;
+}
+
+.infoRating{
+  display: flex;
+  justify-content: center;
+}
+
+.infoContGenres {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+}
+
+.btnDiv {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.btn {
+  font-family: 'Courier New', Courier, monospace;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #a2c11c;
+
+}
+
+.btn:hover {
+  box-shadow: 2px 1px 2px 1px #2c5d63b6;
+}

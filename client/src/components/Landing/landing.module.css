@@ -1,0 +1,39 @@
+button{
+  cursor: pointer; 
+  border: none;
+  border-radius: 5px;
+}
+
+.btn {
+  /* position: absolute; */
+  left:45%;
+  top:20%;
+  width: 45%;
+  max-width: 370px;
+  font-size: 1.7rem;
+  background: none;
+  padding: 0.65rem 0.6rem;
+  transition: color 0.1s linear;
+  z-index: 100;
+  border: 0.2rem solid white;
+  outline: 0.1rem solid #25b687;
+  text-shadow: 0 0 3px #25b687;
+  color: white;
+}
+
+.btn:hover{
+  color: #25b687;
+}
+
+
+.container {
+  background-image: url('../../images/LandingWallpaper.png');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;    
+  background-position-y: center;
+  text-align: center;
+  /* display: table-cell;
+  vertical-align: middle; */
+}
+

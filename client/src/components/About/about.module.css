@@ -1,0 +1,62 @@
+.container {
+  /* display: flex; */
+  justify-content: center;
+  text-align: center;
+}
+
+.containerAbout {
+  justify-content: center;
+  text-align: center;
+}
+
+h1{
+  color: #e0e0e0;
+  text-shadow: 2px 3px 5px #a2c11c;
+  font-size: xx-large;
+}
+
+h2{
+  color: #e0e0e0;
+  text-shadow: 2px 3px 5px #a2c11c;
+  font-size: x-large;
+}
+
+h3{
+  color: #53b4c1;
+  text-shadow: 1px 2px 2px #e0e0e0;
+  font-size: xx-large;
+}
+
+.gitDiv {
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+  border: solid 3px #e0e0e0;
+  border-radius: 30px;
+  width: 150px;
+  background-color: #e0e0e06b;
+}
+
+.gitDiv img{
+  /* display: flex; */
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.gitDiv button {
+  /* display: contents; */
+  background: none;
+  margin: 0px;
+  padding: 10px;
+  font-size: large;
+  height: 30px;
+  color: #e0e0e0;
+}
+
+.gitDiv:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 4px #e0e0e0;
+}
+

@@ -45,6 +45,7 @@ videogameRouter.get('/:idVideogame', async(req, res) => {
   }else{
     try{
       const apiData = await axios.get(`https://api.rawg.io/api/games/${idVideogame}?key=${API_KEY}`);
+      // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA =====>' + idVideogame);
       let { id, name, background_image, genres, description, released, rating, platforms } = apiData.data;
       platforms = platforms.map((p) => p.platform.name);
       genres = genres.map((ge) => ge.name);
@@ -60,6 +61,7 @@ videogameRouter.get('/:idVideogame', async(req, res) => {
       })
     }catch(e){
       console.log(e);
+      return(e);
     }
   }
 });
@@ -81,7 +83,7 @@ videogameRouter.post('/', async(req, res) => {
     });
 
     if(genres.length){
-      genres.split(', ').map(async(ge) => {
+      genres.map(async(ge) => {       //.split(', ') is not a function ==> lo saqué, revisar posibles errores
         let genre = await Genre.findOrCreate({where: {name: ge}});
         gameCreated[0].addGenre(genre[0]);
       })
