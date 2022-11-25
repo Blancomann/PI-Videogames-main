@@ -10,7 +10,7 @@ export const FILTER_BY = 'FILTER_BY';
 export const getAllGames = () => {
   return (dispatch) => {
     return axios
-      .get('http://localhost:3001/videogames/')
+      .get('/videogames/')
       .then((res) => {
         dispatch({ type: GET_ALL_GAMES, payload: res.data })
       })
@@ -21,7 +21,7 @@ export const getAllGames = () => {
 export const searchByName = (name) => {
   return (dispatch) => {
     return axios
-      .get(`http://localhost:3001/videogames?name=${name}`)
+      .get(`/videogames?name=${name}`)
       .then((res) => {
         dispatch({ type: SEARCH_BY_NAME, payload: res.data })
       })
@@ -32,7 +32,7 @@ export const searchByName = (name) => {
 export const getVideogameDetail = (id) => {
   return (dispatch) => {
     return axios
-      .get(`http://localhost:3001/videogame/${id}`)
+      .get(`/videogame/${id}`)
       .then((res) => {
         dispatch({ type: GET_VIDEOGAME_DETAIL, payload: res.data })
       })
@@ -44,7 +44,7 @@ export const getVideogameDetail = (id) => {
 export const getGenres = () => {
   return (dispatch) => {
     return axios
-      .get('http://localhost:3001/genres')
+      .get('/genres')
       .then((res) => {
         dispatch({ type: GET_GENRES, payload: res.data })
       })
