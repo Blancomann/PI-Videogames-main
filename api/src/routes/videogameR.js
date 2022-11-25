@@ -2,7 +2,8 @@ const { Router } = require('express');
 const axios = require('axios')
 const { Videogame, Genre } = require('../db.js');
 // const { Videogame, Genre } = sequelize.models
-const { API_KEY } = process.env;
+// const { API_KEY } = process.env;
+const {API_KEY} = require("../../config.js");
 
 const videogameRouter = Router();
 /*

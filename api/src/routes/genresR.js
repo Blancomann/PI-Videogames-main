@@ -1,7 +1,8 @@
 const axios = require('axios');
 const { Router } = require('express');
 const { Genre } = require('../db.js');
-const {API_KEY} = process.env;
+// const {API_KEY} = process.env;
+const {API_KEY} = require("../../config.js");
 
 const genreRouter = Router();
 
