@@ -10,4 +10,5 @@ module.exports = {
   DB_PASSWORD,
   DB_HOST,
   API_KEY,
+  DB_PORT,
 };
