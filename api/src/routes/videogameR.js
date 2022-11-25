@@ -49,7 +49,7 @@ videogameRouter.get('/:idVideogame', async(req, res) => {
       let { id, name, background_image, genres, description, released, rating, platforms } = apiData.data;
       platforms = platforms.map((p) => p.platform.name);
       genres = genres.map((ge) => ge.name);
-      return res.json({
+      return res.status(200).json({
         id, 
         name, 
         background_image, 
@@ -88,11 +88,11 @@ videogameRouter.post('/', async(req, res) => {
         gameCreated[0].addGenre(genre[0]);
       })
     }
-  res.send(gameCreated)
+  res.status(200).send(gameCreated)
   }catch(e){
     console.log(e);
   }
-  // res.send('Created succesfully, saludos desde el BACK!!')
+
 })
 
 

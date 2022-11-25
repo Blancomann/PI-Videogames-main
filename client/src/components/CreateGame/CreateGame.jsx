@@ -17,27 +17,27 @@ const CreateGame = (props) => {
     platforms: []
   });
 
-  //________________________________________________REVISAR E.TARGET.PARENTNODE 
+
   const handleChange = (e) => {
     //GENRES
     if(e.target.parentNode.parentNode.id === 'genres'){
       if(e.target.checked){
-        console.log(e);//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        // console.log(e);//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         setForm((prevState) => ({
           ...prevState,
-          genres: form.genres.concat(e.target.name)//e.target.value
+          genres: form.genres.concat(e.target.name)
         }))
       }else{
         setForm((prevState) => ({
           ...prevState,
-          genres: form.genres.filter((g) => e.target.name !== g)//e.target.value
+          genres: form.genres.filter((g) => e.target.name !== g)
         }))
       }
     }
     //PLATFORMS
     if(e.target.parentNode.parentNode.id === 'platforms'){
       if(e.target.checked){
-        console.log(e);//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        // console.log(e);//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         setForm((prevState) => ({
           ...prevState,
           platforms: form.platforms.concat(e.target.name)
@@ -57,7 +57,6 @@ const CreateGame = (props) => {
       }))
     }
 
-    //ERRORS ________________________________________________________________________REVISAR
     setErrors(validate({
       ...form,
       [e.target.name]: e.target.value
@@ -98,7 +97,7 @@ const CreateGame = (props) => {
       return alert(Object.values(errors).concat(checkboxErrors).join('\n'));
     };
     axios.post(`http://localhost:3001/videogame`, form)
-      .then((res) => console.log(res.data));
+      // .then((res) => console.log(res.data));
     alert(`${form.name} has been created!`)
     props.history.push('/videogames'); //Añade al historial
   }
@@ -114,7 +113,7 @@ const CreateGame = (props) => {
             <input type="text" className={s.name} placeholder="Name.." id="name" name="name" autoComplete="off" /><br/>
 
             <label htmlFor="description" className={s.titleName}><strong>Description: </strong></label><br/>
-            <textarea className={s.name} name="description" placeholder="Description.." id="description" cols='30' rows='3' /><br/>
+            <textarea className={s.name} minLength='8' name="description" placeholder="Description.." id="description" cols='30' rows='3' /><br/>
 
             <label htmlFor="date" className={s.titleName}><strong>Release date: </strong></label><br/>
             <input type="date" name="released" className={s.dt} id="date" required /><br/>

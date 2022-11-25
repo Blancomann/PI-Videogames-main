@@ -24,7 +24,7 @@ genreRouter.get('/', async(req, res) => {
       }
     })
     // console.log(frontGenres.length);
-    res.send(frontGenres);
+    res.status(200).send(frontGenres);
   }catch(e){
     console.log(e);
   }

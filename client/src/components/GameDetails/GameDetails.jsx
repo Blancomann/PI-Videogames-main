@@ -96,5 +96,8 @@ const mapStateToProps = (state) => {
   }
 };
 
+
 export default connect(mapStateToProps, {getVideogameDetail})(GameDetails);
 
+
+// const gameDetails = useSelector((state) => state.gameDetails)

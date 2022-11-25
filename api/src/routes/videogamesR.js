@@ -20,6 +20,8 @@ videogamesRouter.get('/', async(req, res) => {
     genres: el.genres.map(g => g.name)
 }), [])
 
+// console.log(dbGames);
+
   if(req.query.name){
     try{
       //busco en API
@@ -39,8 +41,8 @@ videogamesRouter.get('/', async(req, res) => {
       });
       //busco en DB
       const dbFiltered = dbGames.filter((g) => g.name.toLowerCase().includes(req.query.name.toLowerCase()));
-      const results = [...dbFiltered, ...loadedGames.splice(0, 10)];
-      return res.json(results);
+      const results = [...dbFiltered, ...loadedGames.splice(0, 15)];
+      return res.status(200).json(results);
     }catch(e){
       console.log(e);
     }
@@ -63,7 +65,7 @@ videogamesRouter.get('/', async(req, res) => {
         results = [...results, ...loadedGames];
         apiData = await axios.get(apiData.data.next);
       }
-      return res.json(results);
+      return res.status(200).json(results);
     }catch(e){
       console.log(e);
     }
