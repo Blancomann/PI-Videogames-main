@@ -8,12 +8,22 @@
 width: 50px;
 height: 50px;
 border-radius: 15px;
-background-color: #e0e0e0;
-color: black;
+background-color: #ebb587;
+color: #7c0000;
+font-weight: 600;
+}
+
+.btnActive{
+  font-weight: 700;
+  width: 50px;
+height: 50px;
+border-radius: 15px;
+background-color: #c62e0a;
+color: #ebb587;
 }
 
 .btn:hover {
-  background-color: #a2c11c;
+  background-color: #da7a42;
 }
 
 ul {

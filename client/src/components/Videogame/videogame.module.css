@@ -1,17 +1,20 @@
 .containerGame{
-  display: table;
-  flex-wrap: wrap;
-  border: 1px solid black;
+  display: grid;
+  width: 420px;
+  /* flex-wrap: wrap; */
+  border: 3px solid #7c000081;
   margin: 20px;
   padding: 20px;
   border-radius: 10px;
-  background-color: #e0e0e0;
-  box-shadow: 6px 5px 9px 4px #a3c11cca;
+  background-color: #ebb687e1;
+  box-shadow: 6px 5px 9px 4px #c62d0ad7;
   transition: all 400ms ease;
 }
 
 .containerGame:hover {
-  box-shadow: 6px 5px 9px 4px #24c11c;
+  background-color: #ebb687f5;
+  box-shadow: 6px 5px 9px 4px #d15925d8;
+  border: 3px solid #7c0000c7;
   transform: translateY(-1.8%);
 
 }
@@ -37,8 +40,8 @@
   width: 100%;
   min-height: 100%;
   border-radius: 10px;
-  color: #2c5d63b6;
-  text-shadow: 1.5px 1.5px 3px #757575;
+  color: #630000;
+  text-shadow: 1.5px 1.3px 3px #c10000;
   font-size: x-large;
 }
 
@@ -60,7 +63,7 @@
 }
 
 .btn {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Quantico', sans-serif;
   width: 120px;
   height: 40px;
   border-radius: 10px;
@@ -71,3 +74,18 @@
 .btn:hover {
   box-shadow: 2px 1px 2px 1px #2c5d63b6;
 }
+
+
+/* 
+New Color palette (#000000 / #c10000 / #ebb587)
+#000000
+#630000
+#7c0000
+#970000
+#b30000
+#c62e0a
+#d15925
+#da7a42
+#e39863
+#ebb587
+ */

@@ -19,7 +19,7 @@ const Pagination = ({cardPerPage, totalCards, paginate, currentPage}) => {
           pageNumbers.map((p, i) => 
             p === currentPage ? (
               <li key={i}>
-                <button className={s.btn} onClick={() => paginate(p)}>
+                <button className={s.btnActive} onClick={() => paginate(p)}>
                   {p}
                 </button>
               </li>
