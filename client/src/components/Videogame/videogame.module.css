@@ -63,16 +63,17 @@
 }
 
 .btn {
+  color: #ebb587;
   font-family: 'Quantico', sans-serif;
   width: 120px;
   height: 40px;
   border-radius: 10px;
-  background-color: #a2c11c;
+  background-color: #630000ec;
 
 }
 
 .btn:hover {
-  box-shadow: 2px 1px 2px 1px #2c5d63b6;
+  box-shadow: 2px 1px 2px 1px #c10000c5;
 }
 
 
