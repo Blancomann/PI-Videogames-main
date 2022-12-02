@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { getAllGames, getGenres } from "../../redux/actions";
+import { getPage } from "../../redux/actions";
 import s from './videogames.module.css'
 
 import NavBar from "../NavBar/NavBar.jsx";
@@ -13,8 +14,10 @@ import loading from '../../images/loading2.gif'
 
 
 const Videogames = ({  allGames, getAllGames, getGenres  }) => {
+  const dispatch = useDispatch();
+  const page = useSelector((state) => state.page);
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(page);
 
   const [cardPerPage] = useState(15);
 
@@ -31,6 +34,7 @@ const Videogames = ({  allGames, getAllGames, getGenres  }) => {
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
+    dispatch(getPage(pageNumber))
   };
 
   useEffect(() => {

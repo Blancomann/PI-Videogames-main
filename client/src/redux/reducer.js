@@ -1,4 +1,4 @@
-import {GET_ALL_GAMES, SEARCH_BY_NAME, GET_VIDEOGAME_DETAIL, GET_GENRES, ORDER_BY, FILTER_BY} from './actions.js'
+import {GET_ALL_GAMES, SEARCH_BY_NAME, GET_VIDEOGAME_DETAIL, GET_GENRES, ORDER_BY, FILTER_BY, PAGINATION} from './actions.js'
 
 
 const initialState = {
@@ -6,7 +6,8 @@ const initialState = {
   gamesBackUp: [],
   gameDetails: [],
   genres: [],
-  filtered: []
+  filtered: [],
+  page: 1,
 };
 
 export default function reducer(state = initialState, action){
@@ -36,6 +37,12 @@ export default function reducer(state = initialState, action){
       return{
         ...state,
         genres: action.payload
+      }
+
+    case PAGINATION:
+      return{
+        ...state,
+        page: action.payload
       }
 
     case FILTER_BY:

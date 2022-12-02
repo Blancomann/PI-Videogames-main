@@ -6,6 +6,7 @@ export const GET_VIDEOGAME_DETAIL = 'GET_VIDEOGAME_DETAIL';
 export const GET_GENRES = 'GET_GENRES';
 export const ORDER_BY = 'ORDER_BY';
 export const FILTER_BY = 'FILTER_BY';
+export const PAGINATION = 'PAGINATION';
 
 export const getAllGames = () => {
   return (dispatch) => {
@@ -51,6 +52,12 @@ export const getGenres = () => {
       .catch((e) => {return e})
   }
 };
+
+export const getPage = (pageNumber) => {
+  return(dispatch) => {
+    dispatch({ type: PAGINATION, payload: pageNumber})
+  }
+}
 
 export const filterBy = (filter) => {
   return (dispatch) => {

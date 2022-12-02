@@ -2,9 +2,9 @@ import React from "react";
 import s from './pagination.module.css'
 
 const Pagination = ({cardPerPage, totalCards, paginate, currentPage}) => {
-  if(Math.ceil(totalCards / cardPerPage) < currentPage){
-    paginate(1)
-  }
+  // if(Math.ceil(totalCards / cardPerPage) < currentPage){
+  //   paginate(1)
+  // }
 
   const pageNumbers = [];
   for(let i = 1 ; i <= Math.ceil(totalCards / cardPerPage) ; i++){
