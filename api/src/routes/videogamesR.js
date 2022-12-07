@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { Videogame, Genre } = require('../db.js');
 const axios = require('axios')
-const {API_KEY} = process.env;
+// const {API_KEY} = process.env;
 // const {API_KEY} = require("../../config.js");
 
 const videogamesRouter = Router();
@@ -26,7 +26,7 @@ videogamesRouter.get('/', async(req, res) => {
   if(req.query.name){
     try{
       //busco en API
-      const apiData = await axios.get(`https://api.rawg.io/api/games?search=${req.query.name}&key=${API_KEY}`);
+      const apiData = await axios.get(`https://api.rawg.io/api/games?search=${req.query.name}&key=${process.env.API_KEY}`);
       if(apiData.data.count === 0){
         console.log(`Not found: ${req.query.name}`);
         return res.status(204).json(`Not found: "${req.query.name}"`);
@@ -51,7 +51,7 @@ videogamesRouter.get('/', async(req, res) => {
     try{
       let pages = 0;
       let results = [...dbGames];
-      let apiData = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
+      let apiData = await axios.get(`https://api.rawg.io/api/games?key=${process.env.API_KEY}`);
       while(pages <= 4){
         pages++;
         let loadedGames = apiData.data.results.map((g) => {
