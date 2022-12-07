@@ -33,7 +33,7 @@ const path = require("path");
 //         { logging: false, native: false }
 //       );
 
-const {PGUSER, PGPASSWORD, PGHOST, PGDATABASE} = process.env;
+const {PGUSER, PGPASSWORD, PGHOST, PGDATABASE, PGPORT} = process.env;
 
 const sequelize = new Sequelize(`postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}`, {
 // const sequelize = new Sequelize(`postgresql://postgres:ljnOkRyAYx3b5j8FkNeo@containers-us-west-156.railway.app:6044/railway`, {
