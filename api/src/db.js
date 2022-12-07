@@ -4,34 +4,38 @@ const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
 
-let sequelize =
-  process.env.NODE_ENV === "production"
-    ? new Sequelize({
-        database: process.env.DB_NAME,
-        dialect: "postgres",
-        host: process.env.DB_HOST,
-        port: 5432,
-        username: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-        pool: {
-          max: 3,
-          min: 1,
-          idle: 10000,
-        },
-        dialectOptions: {
-          ssl: {
-            require: true,
-            // Ref.: https://github.com/brianc/node-postgres/issues/2009
-            rejectUnauthorized: false,
-          },
-          keepAlive: true,
-        },
-        ssl: true,
-      })
-    : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`,
-        { logging: false, native: false }
-      );
+// let sequelize =
+//   process.env.NODE_ENV === "production"
+//     ? new Sequelize({
+//         database: process.env.DB_NAME,
+//         dialect: "postgres",
+//         host: process.env.DB_HOST,
+//         port: 5432,
+//         username: process.env.DB_USER,
+//         password: process.env.DB_PASSWORD,
+//         pool: {
+//           max: 3,
+//           min: 1,
+//           idle: 10000,
+//         },
+//         dialectOptions: {
+//           ssl: {
+//             require: true,
+//             // Ref.: https://github.com/brianc/node-postgres/issues/2009
+//             rejectUnauthorized: false,
+//           },
+//           keepAlive: true,
+//         },
+//         ssl: true,
+//       })
+//     : new Sequelize(
+//         `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`,
+//         { logging: false, native: false }
+//       );
+
+const {PGUSER, PGPASSWORD, PGHOST, PGDATABASE} = process.env;
+
+const sequelize = new Sequelize(`postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}`)
 
 // const sequelize = new Sequelize(`postgresql://postgres:0Sxr5aMs44g7LTncOd9M@containers-us-west-158.railway.app:5580/railway`, {
 //   logging: false, // set to console.log to see the raw SQL queries
