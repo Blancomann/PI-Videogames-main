@@ -24,7 +24,7 @@ const { conn } = require('./src/db.js');
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(PORT, () => {
+  server.listen(process.env.PORT, () => {
     console.log(`listening at ${PGPORT}`); // eslint-disable-line no-console
   });
 });
