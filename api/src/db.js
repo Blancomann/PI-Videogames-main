@@ -38,6 +38,7 @@ const { PGUSER, PGPASSWORD, PGHOST, PGPORT, PGDATABASE } = process.env;
 const sequelize = new Sequelize(`postgresql://postgres:0Sxr5aMs44g7LTncOd9M@containers-us-west-158.railway.app:5580/railway`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  dialectModule: pg
 });
 const basename = path.basename(__filename);
 
