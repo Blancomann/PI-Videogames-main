@@ -5,10 +5,10 @@ const {API_KEY} = process.env;
 // const {API_KEY} = require("../../config.js");
 
 const genreRouter = Router();
-
+// axios.get("La url", { headers: { "Accept-Encoding": "gzip,deflate,compress" },});
 genreRouter.get('/', async(req, res) => {
   try{
-    const apiData = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`);
+    const apiData = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`, { headers: { "Accept-Encoding": "gzip,deflate,compress" },});
     const genres = apiData.data.results;
     genres.forEach(async(g) => {
       await Genre.findOrCreate({
