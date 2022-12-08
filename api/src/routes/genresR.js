@@ -8,7 +8,7 @@ const genreRouter = Router();
 
 genreRouter.get('/', async(req, res) => {
   try{
-    const apiData = await axios.get(`https://api.rawg.io/api/genres?key=${process.env.API_KEY}`);
+    const apiData = await axios.get(`https://api.rawg.io/api/genres?key=19ffbe207bf84c358063377e656fbf27`);
     const genres = apiData.data.results;
     genres.forEach(async(g) => {
       await Genre.findOrCreate({
