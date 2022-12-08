@@ -52,8 +52,8 @@ videogamesRouter.get('/', async(req, res) => {
       let pages = 0;
       let results = [...dbGames];
       let apiData = await axios.get(`https://api.rawg.io/api/games?key=${process.env.API_KEY}`, { headers: { "Accept-Encoding": "gzip,deflate,compress" },});
-      // while(pages <= 4){
-        // pages++;
+      while(pages <= 4){
+        pages++;
         let loadedGames = apiData.data.results.map((g) => {
           return{
             id: g.id,
@@ -64,8 +64,8 @@ videogamesRouter.get('/', async(req, res) => {
           }
         });
         results = [...results, ...loadedGames];
-        // apiData = await axios.get(apiData.data.next);
-      // }
+        apiData = await axios.get(apiData.data.next);
+      }
       return res.status(200).json(results);
     }catch(e){
       console.log(e);
