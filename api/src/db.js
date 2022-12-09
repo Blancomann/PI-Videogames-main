@@ -4,49 +4,20 @@ const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
 
-const {PGUSER, PGPASSWORD, PGHOST, PGDATABASE, PGPORT} = process.env;
-
-// let sequelize =
-//   process.env.NODE_ENV === "production"
-//     ? new Sequelize({
-//         database: PGDATABASE,
-//         dialect: "postgres",
-//         host: PGHOST,
-//         port: 3001,
-//         username: PGUSER,
-//         password: PGPASSWORD,
-//         pool: {
-//           max: 3,
-//           min: 1,
-//           idle: 10000,
-//         },
-//         dialectOptions: {
-//           ssl: {
-//             require: true,
-//             // Ref.: https://github.com/brianc/node-postgres/issues/2009
-//             rejectUnauthorized: false,
-//           },
-//           keepAlive: true,
-//         },
-//         ssl: true,
-//       })
-//     : new Sequelize(
-//         `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`,
-//         { logging: false, native: false }
-//       );
-
+const {DB_USER, DB_PASSWORD, DB_HOST} = process.env;
 
 
 // const sequelize = new Sequelize(`postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}`, {
-const sequelize = new Sequelize(`postgresql://postgres:ljnOkRyAYx3b5j8FkNeo@containers-us-west-156.railway.app:6044/railway`, {
-  logging: false, // set to console.log to see the raw SQL queries
-  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-})
-
-// const sequelize = new Sequelize(`postgresql://postgres:0Sxr5aMs44g7LTncOd9M@containers-us-west-158.railway.app:5580/railway`, {
+// const sequelize = new Sequelize(`postgresql://postgres:ljnOkRyAYx3b5j8FkNeo@containers-us-west-156.railway.app:6044/railway`, {
 //   logging: false, // set to console.log to see the raw SQL queries
 //   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-// });
+// })
+
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`, {
+  logging: false, // set to console.log to see the raw SQL queries
+  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+});
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];

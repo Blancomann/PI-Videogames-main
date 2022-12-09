@@ -45,7 +45,7 @@ videogameRouter.get('/:idVideogame', async(req, res) => {
 
   }else{
     try{
-      const apiData = await axios.get(`https://api.rawg.io/api/games/${idVideogame}?key=${API_KEY}`, { headers: { "Accept-Encoding": "gzip,deflate,compress" },});
+      const apiData = await axios.get(`https://api.rawg.io/api/games/${idVideogame}?key=${API_KEY}`, { headers: { "Accept-Encoding": "gzip,deflate,compress" }});
       // console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA =====>' + idVideogame);
       let { id, name, background_image, genres, description, released, rating, platforms } = apiData.data;
       platforms = platforms.map((p) => p.platform.name);
