@@ -54,7 +54,6 @@ const Videogames = ({  allGames, getAllGames, getGenres  }) => {
         currentPage={currentPage}
       />
       <div className={s.gamesDiv}>
-      {console.log('AAAAAAAAA', process.env.REACT_APP_API)}
         {
           currentCards.length > 1 ? (
             currentCards.map((g) => (
