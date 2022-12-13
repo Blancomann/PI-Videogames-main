@@ -96,7 +96,7 @@ const CreateGame = (props) => {
     if(Object.values(errors).length || checkboxErrors.length){
       return alert(Object.values(errors).concat(checkboxErrors).join('\n'));
     };
-    axios.post(`http://localhost:3001/videogame`, form)
+    axios.post(`http://localhost:3001/videogame`, form, { headers: { "Accept-Encoding": "gzip,deflate,compress" }})
       // .then((res) => console.log(res.data));
     alert(`${form.name} has been created!`)
     props.history.push('/videogames'); //Añade al historial
