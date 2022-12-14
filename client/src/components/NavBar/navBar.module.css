@@ -21,8 +21,3 @@
 .container button:hover{
   background-color: #da7a42;
 }
-
-.container button:active{
-  background-color: #c62e0a;
-  color:#ebb587
-}

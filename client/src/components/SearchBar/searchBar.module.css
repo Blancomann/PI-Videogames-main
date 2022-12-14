@@ -7,11 +7,19 @@
 }
 
 .btn{
+  font-family: 'Quantico', sans-serif;
+  font-size: 13px;
+  /* font-weight: 600; */
+  background-color: #ebb587;
+  color: #7c0000;
   margin-left: 5px;
   padding: 10px;
   margin: 20px;
   border-radius: 14px;
-  background-color: #e0e0e0;
+}
+
+.btn:hover{
+  background-color: #da7a42;
 }
 
 .textInput{
@@ -19,6 +27,11 @@
   padding: 10px;
   margin: 20px;
   width: 380px;
-  background-color: #2c5d6367;
-  border-radius: 8px;
+  background-color: #7c00009b;
+  border: none;
+  border-radius: 10px;
+}
+
+.textInput:hover{
+  outline: 1.5px solid #ebb587;
 }

@@ -110,10 +110,10 @@ const CreateGame = (props) => {
         <div className={s.formDiv}>
           <form onSubmit={handleSubmit} onChange={handleChange} >
             <label htmlFor="name" className={s.titleName}><strong>Name: </strong></label><br/>
-            <input type="text" className={s.name} placeholder="Name.." id="name" name="name" autoComplete="off" /><br/>
+            <input type="text" className={s.name} id="name" name="name" autoComplete="off" /><br/>
 
             <label htmlFor="description" className={s.titleName}><strong>Description: </strong></label><br/>
-            <textarea className={s.name} minLength='8' name="description" placeholder="Description.." id="description" cols='30' rows='3' /><br/>
+            <textarea className={s.name} minLength='8' name="description" id="description" cols='30' rows='3' /><br/>
 
             <label htmlFor="date" className={s.titleName}><strong>Release date: </strong></label><br/>
             <input type="date" name="released" className={s.dt} id="date" required /><br/>

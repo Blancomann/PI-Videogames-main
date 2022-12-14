@@ -23,7 +23,7 @@ const GameDetails = (props) => {
       {
         gameDetails ? (
           <div>
-            <h3 className={s.title}>{gameDetails.name}</h3>
+            <h4 className={s.title}>{gameDetails.name}</h4>
             {
               gameDetails.background_image ? (
                 <div className={s.imgDiv}>

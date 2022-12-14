@@ -11,11 +11,13 @@
 .detailsDiv {
   display: flex;
   justify-content: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  border: none;
+  border-radius: 14px;
   /* z-index: 1; */
-  margin: 10px;
-  background-color: #e0e0e0;
-  opacity: 0.8;
+  margin: 56px;
+  background-color: #ebb687b3;
+  /* opacity: 0.8; */
 }
 
 .imgDiv {
@@ -36,8 +38,9 @@
 }
 
 .detailsDiv img {
-  border: 5px solid black;
-  border-radius: 8px;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0px 0px 12px #630000;
   /* display: flex;
   justify-content: center;
   text-align: center; */
@@ -50,7 +53,8 @@
   display: flex;
   justify-content: center;
   font-size: xx-large;
-  color: #2c5d63;
+  text-shadow: 1px 1px 4px #c10000bd;
+  color: #630000;
 }
 
 .descriptionDiv {
@@ -67,17 +71,21 @@
 }
 
 .descriptionDiv button {
+  font-family: 'Quantico', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 14px;
   margin: 5px;
   width: 100px;
   height: 40px;
   position: relative;
   left: 46%;
-  background-color: #2c5d63;
+  background-color: #ebb587;
+  color: #7c0000;
 }
 
 .descriptionDiv button:hover {
-  background-color: #a2c11c;
-  color: #283739;
+  background-color: #da7a42;
 }
 
 
